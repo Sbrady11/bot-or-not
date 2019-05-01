@@ -1,7 +1,7 @@
 import React from 'react';
 
 const API_KEY = `${process.env.REACT_APP_NUMVERIFY_API_KEY}`
-let phoneQuery = 9144839583
+
 
 class NumerifyCall extends React.Component {
   constructor(props) {
@@ -12,15 +12,19 @@ class NumerifyCall extends React.Component {
     };
   }
 
-  fetchFirst(url){
+  fetchFirst(phoneQuery){
     let that = this;
-    if (url){
-      fetch('http://apilayer.net/api/validate+?access_key='+API_KEY+'&number='+phoneQuery+'&country_code=&format=1').then(function (response){
+    if (phoneQuery){
+      fetch('http://apilayer.net/api/validate?access_key='+API_KEY+'&number='+phoneQuery+'&country_code=&format=1').then(function (response){
         return response.json();
       }).then(function (result){
-        console.log(result.data.children)
+        console.log(result)
       });
     }
+  }
+
+  componentWillMount() {
+    this.fetchFirst(19144839583)
   }
 
     render() { 
