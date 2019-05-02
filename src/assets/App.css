@@ -13,6 +13,16 @@ body {
     max-width: 500px
 }
 
+.numerifyCall-container {
+    padding: 1em;
+    margin-top: 1em !important;
+    margin: auto;
+    text-align: center;
+    background: white;
+    border-radius: .25em;
+    max-width: 500px;
+}
+
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 40vmin;

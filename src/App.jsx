@@ -6,11 +6,11 @@ import logo from './assets/logo-main.svg'
 class App extends Component {
     render() {
     return (
-      <div class="main">
-        <div class="logo-container">
+      <div className="main">
+        <div className="logo-container">
           <img src={logo} alt="logo"/>
         </div>      
-        <div class="numerifyCall-container">
+        <div className="numerifyCall-container">
           <NumerifyCall />
         </div>
       </div>
