@@ -8,8 +8,12 @@ class NumerifyCall extends React.Component {
     super(props);
 
     this.state = {
-      resp: []
+      resp: [],
+      value: ''
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit(this);
   }
 
   fetchFirst(phoneQuery){
@@ -21,9 +25,18 @@ class NumerifyCall extends React.Component {
         that.setState({
           resp: result
           })
-        console.log(that.state.resp.valid)        
+        console.log(that.state.resp)        
       });
     }
+  }
+
+  handleChange(event){
+    this.setState({value: event.target.value})
+  }
+
+  handleSubmit(event){
+    console.log('sent')
+    this.fetchFirst(this.state.value)
   }
 
   componentWillMount() {
@@ -33,13 +46,22 @@ class NumerifyCall extends React.Component {
     render() { 
       return (
       <div className="numverifyResponse">
-      <ul>
-        <li>{this.state.resp.valid}</li>
-        <li>{this.state.resp.number}</li>
-        <li>{this.state.resp.carrier}</li>
-        <li>{this.state.resp.line_type}</li>
-        <li>{this.state.resp.country_code}</li>
-      </ul>
+        <ul>
+          <li>{this.state.resp.valid}</li>
+          <li>{this.state.resp.number}</li>
+          <li>{this.state.resp.carrier}</li>
+          <li>{this.state.resp.line_type}</li>
+          <li>{this.state.resp.country_code}</li>
+        </ul>
+        <div className="input">
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Number:
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="submit" />
+            </form>
+        </div>
       </div>
       );
     }
