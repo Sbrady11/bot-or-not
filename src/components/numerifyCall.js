@@ -1,4 +1,5 @@
 import React from 'react';
+import logoSub from '../assets/logo-sub.svg'
 
 const API_KEY = `${process.env.REACT_APP_NUMVERIFY_API_KEY}`
 
@@ -46,6 +47,11 @@ class NumerifyCall extends React.Component {
     render() { 
       return (
       <div className="numverifyResponse">
+        <img src={logoSub} alt="logo-sub"/>
+        <div>
+          With more and more bots making phonecalls, you can never be too careful. With Bot or Not, verify the caller information before even answering!
+        </div>
+
         <ul>
           <li>{this.state.resp.valid}</li>
           <li>{this.state.resp.number}</li>
