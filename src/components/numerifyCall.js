@@ -35,7 +35,7 @@ class NumerifyCall extends React.Component {
   }
 
   handleSubmit(event){
-    console.log('sent')
+    console.log('sent')    
     this.fetchFirst(this.state.value)
   }
 
@@ -56,10 +56,9 @@ class NumerifyCall extends React.Component {
         <div className="input">
           <form onSubmit={this.handleSubmit}>
             <label>
-              Number:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input className="textBox" type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
-            <input type="submit" value="submit" />
+            <input className="submit" type="submit" value="SEARCH" />
             </form>
         </div>
       </div>

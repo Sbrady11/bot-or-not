@@ -9,6 +9,24 @@ ul {
     font-family: 'Roboto', sans-serif;
 }
 
+.submit {
+    background: rgb(48, 215, 215);
+    background: linear-gradient(90deg, rgba(48, 215, 215, 1) 0%, rgba(48, 215, 215, 1) 35%, rgba(86, 231, 165, 1) 100%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: white;
+    border-top-right-radius: .25em;
+    border-bottom-right-radius: .25em;
+    border: none;
+    font-size: 14px;
+    padding: 1em;
+    letter-spacing: 5px;
+}
+
+.textBox {
+    padding: 13px;
+}
+
 .logo-container {
     background: white;
     padding: 2em;
